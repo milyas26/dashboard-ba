@@ -32,7 +32,7 @@ const Login = () => {
     };
 
     axios
-      .post("http://localhost:3002/api/login", payload)
+      .post(`${import.meta.env.VITE_ENDPOINT}api/login`, payload)
       .then((res) => {
         console.log(res);
         // Lakukan sesuatu setelah berhasil login
@@ -43,11 +43,11 @@ const Login = () => {
         localStorage.setItem("TOKEN", res.data.Data.acessToken);
       })
       .catch((err) => {
-        toast.error(err.response.message);
+        toast.error(err?.response?.message || "Login gagal");
         console.log(err);
       }).finally(() => {
         // Untuk sekarang, sementara langsung redirect ke halaman dashboard
-        navigate('/dashboard')
+        // navigate('/dashboard')
       })
   };
 

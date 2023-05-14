@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 
 // Inisialisasi Axios instance
 const api: AxiosInstance = axios.create({
-  baseURL: "https://api.example.com", // Ganti dengan URL API Anda
+  baseURL: import.meta.env.VITE_ENDPOINT,
   timeout: 5000, // Sesuaikan dengan kebutuhan Anda
 });
 
