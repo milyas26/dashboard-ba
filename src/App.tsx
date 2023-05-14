@@ -1,11 +1,13 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Home, HomeDashboard, Login, Submenu1, Submenu1Create, Submenu2 } from "./pages";
+import { ToastContainer } from 'react-toastify';
 
 function App() {
 
   return (
     <div className="App">
+      <ToastContainer />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<HomeDashboard />} />

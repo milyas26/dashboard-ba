@@ -4,6 +4,7 @@ import axios, {
   AxiosError,
   InternalAxiosRequestConfig,
 } from "axios";
+import { toast } from "react-toastify";
 
 // Inisialisasi Axios instance
 const api: AxiosInstance = axios.create({
@@ -25,6 +26,7 @@ api.interceptors.request.use(
   },
   (error: AxiosError) => {
     // Tangani error pada request
+    toast.error(error.message);
     return Promise.reject(error);
   }
 );
@@ -35,6 +37,8 @@ api.interceptors.response.use(
     return response;
   },
   (error: AxiosError) => {
+    // Tangani error pada response
+    toast.error(error.message);
     return Promise.reject(error);
   }
 );

@@ -11,6 +11,7 @@ import "./../public/assets/css/demo.min.css";
 import "./../public/assets/css/typicons.min.css";
 import "./../public/assets/css/animate.min.css";
 import 'rsuite/dist/rsuite.min.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { Providers } from "./redux/provider";
 

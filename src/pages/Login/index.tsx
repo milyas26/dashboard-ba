@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Input } from "../../components";
+import { toast } from "react-toastify";
 
 interface LoginProps {
   email: string;
@@ -35,12 +36,14 @@ const Login = () => {
       .then((res) => {
         console.log(res);
         // Lakukan sesuatu setelah berhasil login
+        toast.success("Login berhasil")
         // redirect ke halaman dashboard
         navigate('/')
         // set token to localstorage
         localStorage.setItem("TOKEN", res.data.Data.acessToken);
       })
       .catch((err) => {
+        toast.error(err.response.message);
         console.log(err);
       }).finally(() => {
         // Untuk sekarang, sementara langsung redirect ke halaman dashboard
