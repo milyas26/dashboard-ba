@@ -1,13 +1,13 @@
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Home = () => {
-    const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <div>
-        <h2>HOME</h2>
-        <button onClick={() => navigate('/detail')}>Go to Details</button>
+      <h2>HOME</h2>
+      <button onClick={() => navigate("/dashboard")}>Go to Dashboard</button>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
